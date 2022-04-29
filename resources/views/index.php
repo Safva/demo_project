@@ -16,6 +16,8 @@
             <th>DateOfBirth</th>
             <th>Address</th>
             <th>Contact</th>
+            <th>Delete</th>
+            <th>Update</th>
         </tr>
 
         @forelse($employees as $employee)
@@ -25,6 +27,8 @@
             <td>{{$employee->date_of_birth}}</td>
             <td>{{$employee->address}}</td>
             <td>{{$employee->contact}}</td>
+            <td><a href="{{url('DeleteEmployee')}}/{{$employee->id}}" onclick="return confirm('are u sure , u want to delete this item?');">Delete</a></td>
+            <td><a href="{{url('EmployeeDetailsView')}}/{{$employee->id}}">Update</a></td>
         </tr>
         @empty
         <tr>
